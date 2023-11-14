@@ -12,6 +12,7 @@ func Main(stdin io.Reader, stdout, stderr io.Writer) error {
 		row := scanner.Bytes()
 		if json.Valid(row) {
 			stdout.Write(row)
+      stdout.Write([]byte("\n"))
 		}
 	}
 	return scanner.Err()
